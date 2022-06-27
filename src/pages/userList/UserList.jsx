@@ -10,7 +10,7 @@ export default function UserList() {
   const [data, setData] = useState(userRows);
   useEffect(() => {
     const fetchData =async ()=>{
-        const res =await axios.get(`http://localhost:3001/user`);
+        const res =await axios.get(`http://localhost:3001/user/all`);
         console.log(res.data);
         console.log(userRows);
         setData(res.data.map(item=> ({...item , id:item._id})))

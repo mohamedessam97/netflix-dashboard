@@ -23,6 +23,7 @@ export default function NewMovie() {
     useEffect(() => {
         const fetchData =async ()=>{
             const res =await axios.get(`http://localhost:3001/movie/${movieId}`);
+            console.log(res.data);
             setMovie(res.data)
         }
         fetchData()

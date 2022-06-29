@@ -18,7 +18,7 @@ export default function MovieList() {
   };
 
   const columns = [
-    { field: "_id", headerName: "ID", width: 90 },
+    // { field: "_id", headerName: "ID", width: 90 },
     {
       field: "movie",
       headerName: "Movie",
@@ -33,7 +33,7 @@ export default function MovieList() {
       },
     },
     { field: "genre", headerName: "Genre", width: 120 },
-    { field: "year", headerName: "year", width: 120 },
+    { field: "year", headerName: "year", width: 120  },
     { field: "limit", headerName: "Duration", width: 120 },
     { field: "isSeries", headerName: "isSeries", width: 120 },
 

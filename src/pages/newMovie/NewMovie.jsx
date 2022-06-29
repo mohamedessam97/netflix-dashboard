@@ -80,18 +80,10 @@ export default function NewMovie() {
           />
         </div>
         <div className="addProductItem">
-          <label>Description</label>
-          <input
-            type="text"
-            placeholder="description"
-            name="desc"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="addProductItem">
           <label>Year</label>
           <input
-            type="text"
+               type="number" min="1900" max="2022" step="1" 
+         
             placeholder="Year"
             name="year"
             onChange={handleChange}
@@ -109,7 +101,8 @@ export default function NewMovie() {
         <div className="addProductItem">
           <label>Duration</label>
           <input
-            type="text"
+         
+            type="number"
             placeholder="Duration"
             name="limit"
             onChange={handleChange}
@@ -131,6 +124,30 @@ export default function NewMovie() {
             <option value="true">Yes</option>
           </select>
         </div>
+
+        {/* <div className="addProductItem">
+          <label>Description</label>
+          <input
+            type="text"
+            placeholder="description"
+            name="desc"
+            onChange={handleChange}
+          />
+        </div> */}
+     
+        <div className="addProductItem">
+            <label>Description</label>
+            <textarea
+          
+              name="desc"
+              rows="4"
+              cols="100"
+              onChange={handleChange}
+              // value={movie.desc}
+            >
+              description
+            </textarea>
+          </div>
         <div className="addProductItem">
           <label>Trailer</label>
           <input
@@ -164,7 +181,7 @@ export default function NewMovie() {
           <button className="addProductButton" onClick={handleUpload}>
             Upload
           </button>
-          <span>{prog}%</span>
+          {/* <span>{prog}%</span> */}
         </>
         )}
       </form>

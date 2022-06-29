@@ -13,7 +13,7 @@ export default function Login() {
     const res =await axios.post("http://localhost:3001/admin/login", { email, password });
     localStorage.setItem("user", JSON.stringify(res.data.user));
     localStorage.setItem("token", res.data.token);
-    console.log(res.data.token);
+    console.log(res.data);
     if(res.data.token){
       history.push("/");
       // console.log("here");

@@ -111,8 +111,12 @@
 .userUpdateItem>label{
     margin-bottom: 5px;
     font-size: 14px;
+    
 }
 
+.userUpdateItem:focus{
+border-color: #12C6B2;
+}
 .userUpdateInput{
     border: none;
     width: 250px;
@@ -148,7 +152,7 @@
     border: none;
     padding: 5px;
     cursor: pointer;
-    background-color: darkblue;
+    background-color: #12C6B2;
     color: white;
     font-weight: 600;
 }

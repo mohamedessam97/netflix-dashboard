@@ -72,7 +72,7 @@ export default function NewList() {
             <select
               multiple
               name="content"
-              onChange={handleSelect}
+              onChange={handleSelect} 
               style={{ height: "280px" }}
             >
               {movies.map((movie) => (

@@ -17,9 +17,9 @@ import ListList from "./pages/listList/ListList";
 import List from "./pages/list/List";
 import NewList from "./pages/newList/NewList";
 import MovieList from "./pages/movieList/MovieList";
-import { Movie } from "@material-ui/icons";
+// import { Movie } from "@material-ui/icons";
 import NewMovie from "./pages/newMovie/NewMovie";
-import Test from "./pages/Test/Test";
+import Movie from "./pages/movie/Movie";
 import { useHistory } from "react-router-dom";
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route>
-        {user && (
+        {/* <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route> */}
+        {/* {user && ( */}
           <>
             <Topbar />
             <div className="container">
@@ -60,7 +60,7 @@ function App() {
               </Route>
               <Route path="/movie/:movieId">
                 {/* <Movie /> */}
-                <Test />
+                <Movie />
               </Route>
               <Route path="/newMovie">
                 <NewMovie />
@@ -76,7 +76,7 @@ function App() {
               </Route>
             </div>
           </>
-        )}
+        {/* )} */}
         {/* {!user && <button onClick={()=> history.push('/login')}>Go to Login</button>} */}
       </Switch>
     </Router>

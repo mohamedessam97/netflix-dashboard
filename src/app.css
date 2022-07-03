@@ -1,4 +1,14 @@
+input , textarea , select{
+    border: 2px solid rgb(18,198,178);
+}
 
+button{
+    background-color: rgb(18,198,178);
+    border: 0;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
 .container{
     display: flex;
     margin-top: 10px;
@@ -9,3 +19,4 @@
     text-decoration: none;
     color: inherit;
 }
+

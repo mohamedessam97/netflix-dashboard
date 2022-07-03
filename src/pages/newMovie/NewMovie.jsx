@@ -3,6 +3,7 @@ import "./newMovie.css";
 import storage from "../../firebase";
 import { createMovie } from "../../context/movieContext/apiCalls";
 import { MovieContext } from "../../context/movieContext/MovieContext";
+import { AttachFile } from "@material-ui/icons";
 
 export default function NewMovie() {
   const [movie, setMovie] = useState(null);

@@ -5,10 +5,11 @@ import { createMovie } from "../../context/movieContext/apiCalls";
 import { MovieContext } from "../../context/movieContext/MovieContext";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export default function NewMovie() {
   let { movieId } = useParams();
-
+let history=useHistory()
   const [movie, setMovie] = useState(null);
   const [img, setImg] = useState(null);
   // const [imgTitle, setImgTitle] = useState(null);
@@ -75,6 +76,7 @@ export default function NewMovie() {
       movie
     );
     console.log(res);
+    history.push("/movies")
   };
 
   return (

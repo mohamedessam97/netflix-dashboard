@@ -20,7 +20,8 @@ export default function Topbar() {
           <button onClick={()=>{
             localStorage.removeItem('user')
             localStorage.removeItem('token')
-              
+            // history.push("/");
+            window.location.assign("/")
             }}>Logout</button>
         </div>
       </div>

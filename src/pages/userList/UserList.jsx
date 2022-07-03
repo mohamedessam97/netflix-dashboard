@@ -18,9 +18,12 @@ export default function UserList() {
     fetchData()
 }, []);
   const handleDelete = async (id) => {
-    const res =await axios.delete(`http://localhost:3001/user/${id}`);
-    console.log(res);
-    setData(data.filter((item) => item.id !== id));
+    const result = window.confirm('Do you Want to delete?')
+    if(result){
+
+      const res =await axios.delete(`http://localhost:3001/user/${id}`);
+      setData(data.filter((item) => item.id !== id));
+    }
   };
   
   const columns = [

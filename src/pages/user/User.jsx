@@ -10,8 +10,11 @@ import { Link , useParams} from "react-router-dom";
 import "./user.css";
 import axios from "axios";
 import { useEffect , useState } from "react";
+import { useHistory } from "react-router-dom";
+
 
 export default function User() {
+  let history =useHistory()
   const {userId}=useParams()
   const [user , setUser]=useState(null)
   useEffect(() => {
@@ -33,6 +36,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   const res =await axios.put(`http://localhost:3001/user/${userId}`, user);
   console.log(res);
+  history.push("/users")
 
 };
 

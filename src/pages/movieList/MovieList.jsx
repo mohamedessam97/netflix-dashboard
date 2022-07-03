@@ -14,7 +14,10 @@ export default function MovieList() {
   }, [dispatch]);
 
   const handleDelete = (id) => {
+    const result = window.confirm('Do you Want to delete?')
+    if(result){
     deleteMovie(id, dispatch);
+    }
   };
 
   const columns = [

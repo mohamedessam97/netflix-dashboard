@@ -15,7 +15,7 @@ export default function Login() {
     localStorage.setItem("token", res.data.token);
     console.log(res.data);
     if(res.data.token){
-      history.push("/");
+      window.location.assign("/users")
       // console.log("here");
     }
   };

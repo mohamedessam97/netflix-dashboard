@@ -14,7 +14,10 @@ export default function ListList() {
   }, [dispatch]);
 
   const handleDelete = (id) => {
+    const result = window.confirm('Do you Want to delete?')
+    if(result){
     deleteList(id, dispatch);
+    }
   };
 
   const columns = [

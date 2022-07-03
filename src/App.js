@@ -37,16 +37,17 @@ function App() {
   return (
     <Router>
       <Switch>
-        {/* <Route path="/login">{user ? <Redirect to="/" /> : <Login />}</Route> */}
         {/* {user && ( */}
           <>
-            <Topbar />
+            {user && <Topbar />}
             <div className="container">
-              <Sidebar />
+              {user && <Sidebar /> }
+        <Route path="/">{user ? <Redirect to='users'/> : <Login />}</Route>
               {/* <Route exact path="/">  
                 <Home />
               </Route> */}
-              <Route exact path="/">
+              <Route path="/users">
+              {/* {user ? <UserList /> : <Login />} */}
                 <UserList />
               </Route>
               <Route path="/user/:userId">
@@ -76,7 +77,7 @@ function App() {
               </Route>
             </div>
           </>
-        {/* )} */}
+        
         {/* {!user && <button onClick={()=> history.push('/login')}>Go to Login</button>} */}
       </Switch>
     </Router>

@@ -62,11 +62,15 @@ let history=useHistory()
 
   const handleUpload = (e) => {
     e.preventDefault();
-    upload([
-      { file: img, label: "img" },
-      { file: trailer, label: "trailer" },
-      { file: video, label: "video" },
-    ]);
+    if(!img && !trailer && !video){
+      console.log("ss");
+      upload([
+        { file: img, label: "img" },
+        { file: trailer, label: "trailer" },
+        { file: video, label: "video" },
+      ]);
+
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -173,6 +177,7 @@ let history=useHistory()
               type="file"
               name="trailer"
               onChange={(e) => setTrailer(e.target.files[0])}
+              required
             />
           </div>
 
@@ -183,6 +188,7 @@ let history=useHistory()
               id="img"
               name="img"
               onChange={(e) => setImg(e.target.files[0])}
+              required
             />
           </div>
           <div className="addProductItem">
@@ -191,6 +197,7 @@ let history=useHistory()
               type="file"
               name="video"
               onChange={(e) => setVideo(e.target.files[0])}
+              required
             />
           </div>
           {uploaded === 3 ? (

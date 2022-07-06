@@ -56,11 +56,17 @@ let history =useHistory()
 
   const handleUpload = (e) => {
     e.preventDefault();
-    upload([
-      { file: img, label: "img" },
-      { file: trailer, label: "trailer" },
-      { file: video, label: "video" },
-    ]);
+    if(img && trailer && video){
+      console.log("ss");
+      upload([
+        { file: img, label: "img" },
+        { file: trailer, label: "trailer" },
+        { file: video, label: "video" },
+      ]);
+
+    }else{
+      setUploaded(3)
+    }
   };
 
   const handleSubmit = (e) => {

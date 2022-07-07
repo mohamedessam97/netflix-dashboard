@@ -32,9 +32,12 @@ let history =useHistory()
       uploadTask.on(
         "state_changed",
         (snapshot) => {
+          const progs =Math.round(
+            (snapshot.bytesTransferred/snapshot.totalBytes )*100
+          )
           // let progress =
           //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          setProg((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+          setProg(progs)
           // console.log("Upload is " + progress + "% done");
           // setInterval(()=>{
           //   },1000)
@@ -192,7 +195,7 @@ history.push("/movies")
           <button className="addProductButton" onClick={handleUpload}>
             Upload
           </button>
-          {/* <span>{prog}%</span> */}
+          <span>{prog}%</span>
         </>
         )}
       </form>
